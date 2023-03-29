@@ -10,4 +10,7 @@
 module use /storage/icds/RISE/sw8/modules
 module load starccm/17.06.008-R8
 
-starccm+ -batch -np $SLURM_NTASKS_PER_NODE -mpi openmpi Test.sim >&output.txt
+NODEFILE="$(pwd)/slurmhosts.$SLURM_JOB_ID.txt"
+srun /bin/hostname -s &> $NODEFILE
+
+starccm+ -batch -nn ${SLURM_NNODES} -np ${SLURM_NTASKS} -machinefile ${NODEFILE} -mpibootstrap ssh Test.sim >&output.txt
