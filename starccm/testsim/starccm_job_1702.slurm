@@ -9,5 +9,8 @@
 
 module load starccm
 
-starccm+ -batch -np $SLURM_NTASKS_PER_NODE -mpi openmpi Test.sim >&output.txt
+NODEFILE="$(pwd)/slurmhosts.$SLURM_JOB_ID.txt"
+srun /bin/hostname -s &> $NODEFILE
+
+starccm+ -batch -nn ${SLURM_NNODES} -np ${SLURM_NTASKS} -machinefile ${NODEFILE} -mpibootstrap ssh Test.sim >&output.txt
 
