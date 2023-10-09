@@ -8,10 +8,10 @@
 #SBATCH --mem=8GB
 #SBATCH --time=01:00:00
 
-module use /storage/icds/RISE/sw8/modules
 module load starccm
 
 NODEFILE="$(pwd)/slurmhosts.$SLURM_JOB_ID.txt"
 srun /bin/hostname -s &> $NODEFILE
+NTASKS=`echo $NODEFILE | wc -l`
 
-starccm+ -nn ${SLURM_NNODES} -np ${SLURM_NTASKS} -machinefile ${NODEFILE} -mpi openmpi -mpitest
+starccm+ -np ${NTASKS} -machinefile ${NODEFILE} -mpi openmpi -mpitest
