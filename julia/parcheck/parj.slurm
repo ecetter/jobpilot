@@ -5,7 +5,7 @@
 #SBATCH --partition=open
 #SBATCH --nodes=3
 #SBATCH --ntasks-per-node=4
-#SBATCH --mem=1GB
+#SBATCH --mem=4GB
 #SBATCH --time=00:20:00
 
 # load julia
