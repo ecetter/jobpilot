@@ -9,6 +9,6 @@
 hostname
 lscpu | grep "Model name"
 
-module load anaconda3/2020.11
+module load anaconda/2023
 
 python svd_np.py
