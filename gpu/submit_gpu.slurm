@@ -2,7 +2,7 @@
 
 #SBATCH --job-name=gpu_check
 #SBATCH --partition=sla-prio
-#SBATCH --account=dml129-engagement_gpu
+#SBATCH --account=icds_internal_use_gpu
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=1
 #SBATCH --gpus=1
