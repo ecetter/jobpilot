@@ -14,7 +14,7 @@ module purge
 module load gcc
 
 # Compile and run
-g++ drake.cpp -o drake
+g++ drakeeq.cpp -o drake
 ./drake .1 .1 .1 .1 .1 .1 .1
 
 # Finish up
