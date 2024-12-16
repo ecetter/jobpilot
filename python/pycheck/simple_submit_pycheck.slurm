@@ -15,6 +15,9 @@ echo " "
 echo "Job started at `date` on `hostname`"
 echo " "
 
+# load python module
+module load python
+
 #### Execute your job ####
 python pycheck.py
 
