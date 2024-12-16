@@ -3,7 +3,7 @@
 import numpy as np
 
 # open file for reading
-dimf = open( 'dim_file.txt', 'r' );
+dimf = open( 'dimfile.txt', 'r' );
 
 # read in file of matrix dimensions
 rawdims = [];

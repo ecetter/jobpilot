@@ -12,7 +12,8 @@ echo " "
 echo "Job started on `hostname` at `date`"
 echo " "
 
-python matmult.py < dim_file.txt > log.matmult
+module load python
+python matmult.py < dimfile.txt > log.matmult
 
 # Finish up
 echo " "

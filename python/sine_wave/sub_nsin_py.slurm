@@ -9,4 +9,5 @@
 #SBATCH --time=00:01:00
 #SBATCH --output=%x.%j.out
 
-srun python read_nsin.py
+module load python
+python read_nsin.py
